@@ -159,38 +159,6 @@ The Memori system automatically creates a SQLite database to store conversation 
 4. **Memory Storage**: Conversation stored in Memori for future reference
 5. **Product Recommendations**: AI suggests relevant products from catalog
 
-## 🆚 Comparison with Azure Version
-
-| Feature | DigitalOcean Version | Azure AI Foundry Version |
-|---------|---------------------|--------------------------|
-| AI Platform | DigitalOcean AI | Azure AI Foundry |
-| Memory System | Memori (Same) | Memori (Same) |
-| Backend | FastAPI | Python Script |
-| Frontend | Next.js Web App | Console-based |
-| API | RESTful endpoints | Function calls |
-| Deployment | Containerizable | Script execution |
-
-## 🚀 Deployment
-
-### Backend Deployment
-```bash
-# Using Docker (recommended)
-docker build -t smart-shopping-backend .
-docker run -p 8000:8000 --env-file .env smart-shopping-backend
-
-# Or using cloud platforms
-# Deploy to DigitalOcean App Platform, Heroku, etc.
-```
-
-### Frontend Deployment
-```bash
-# Build for production
-npm run build
-
-# Deploy to Vercel, Netlify, or any static hosting
-# Ensure NEXT_PUBLIC_API_URL points to your backend
-```
-
 ## 🛠️ Development
 
 ### Adding New Features
