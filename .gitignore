@@ -1,0 +1,147 @@
+# Smart Shopping Assistant - Git Ignore File
+
+# ====================
+# FRONTEND (Next.js/React)
+# ====================
+
+# Dependencies
+frontend/node_modules/
+frontend/.pnp
+frontend/.pnp.js
+frontend/.pnp.*.js
+
+# Next.js
+frontend/.next/
+frontend/.next/*
+frontend/out/
+frontend/build/
+frontend/build/**/*
+frontend/dist/
+
+# Environment variables
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/.env*.local
+
+# Testing
+frontend/coverage/
+
+# TypeScript
+frontend/*.tsbuildinfo
+frontend/next-env.d.ts
+
+# ESLint
+frontend/.eslintcache
+
+# Vercel
+frontend/.vercel
+
+# Frontend logs
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+
+# ====================
+# BACKEND (Python/FastAPI)
+# ====================
+
+# Python
+backend/__pycache__/
+backend/*.py[cod]
+backend/*$py.class
+backend/*.so
+backend/.Python
+backend/build/
+backend/develop-eggs/
+backend/dist/
+backend/downloads/
+backend/eggs/
+backend/.eggs/
+backend/lib/
+backend/lib64/
+backend/parts/
+backend/sdist/
+backend/var/
+backend/wheels/
+backend/share/python-wheels/
+backend/*.egg-info/
+backend/.installed.cfg
+backend/*.egg
+backend/MANIFEST
+
+# Virtual environments
+backend/venv/
+/venv/
+backend/env/
+backend/ENV/
+backend/.venv/
+backend/.env/
+
+# Environment variables
+backend/.env
+backend/.env.local
+backend/.env.production
+backend/.env.development
+
+# Database
+backend/*.db
+backend/*.sqlite
+backend/*.sqlite3
+backend/smart_shopping_digitalocean.db
+
+# Logs
+backend/logs/
+backend/*.log
+
+# Testing
+backend/.pytest_cache/
+backend/.coverage
+backend/htmlcov/
+
+# Jupyter Notebook
+backend/.ipynb_checkpoints
+
+# PyCharm
+backend/.idea/
+
+# ====================
+# GENERAL (OS & IDE)
+# ====================
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Editor backup files
+*~
+*.bak
+*.backup
+.*.swp
+.*.swo
+
+# API keys and secrets
+secrets/
+keys/
+*.key
+*.pem
+
+# Local development
+local/
+dev/
