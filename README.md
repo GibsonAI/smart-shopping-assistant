@@ -12,7 +12,7 @@ A complete smart shopping application powered by AI agents and [Memori](https://
 
 - **Memory-Enhanced Shopping**: Remembers customer preferences and shopping history using Memori
 - **Multiple AI Backend Options**: 
-  - **DigitalOcean AI Integration**: Powered by DigitalOcean's AI platform for intelligent responses
+  - **DigitalOcean Gradient AI Platform**: Powered by [DigitalOcean's Gradient AI Platform](https://www.digitalocean.com/products/gradient/platform) for intelligent responses
   - **Swarms Multi-Agent System**: Enhanced intelligence with specialized shopping assistant agents
 - **Modern Web Interface**: Beautiful React/Vite frontend with Tailwind CSS and shadcn/ui components
 - **Real-time Chat**: Interactive chatbot with typing indicators and message history
@@ -22,13 +22,13 @@ A complete smart shopping application powered by AI agents and [Memori](https://
 
 ## 🏗️ Architecture
 
-### Option 1: DigitalOcean AI Backend
+### Option 1: DigitalOcean Gradient AI Backend
 ```
 ┌─────────────────────┐    ┌─────────────────────┐    ┌─────────────────────┐
 │                     │    │                     │    │                     │
-│   React/Vite        │    │    FastAPI          │    │   DigitalOcean AI   │
-│   Frontend          │◄───┤    Backend          │◄───┤    Platform         │
-│                     │    │                     │    │                     │
+│   React/Vite        │    │    FastAPI          │    │  DigitalOcean       │
+│   Frontend          │◄───┤    Backend          │◄───┤  Gradient AI        │
+│                     │    │                     │    │  Platform           │
 └─────────────────────┘    └─────────────────────┘    └─────────────────────┘
                                       │
                                       ▼
@@ -104,14 +104,14 @@ smart-shopping-assistant/
 - Python 3.8+ 
 - Node.js 18+
 - API credentials for your chosen backend:
-  - **DigitalOcean**: DigitalOcean AI account with API credentials
+  - **DigitalOcean**: DigitalOcean Gradient AI Platform account with API credentials
   - **Swarms**: OpenAI API key
 
 ### 1. Backend Setup
 
 Choose one of the two backend options:
 
-#### Option A: DigitalOcean AI Backend
+#### Option A: DigitalOcean Gradient AI Backend
 
 ```bash
 cd backend/with-digital-ocean-agent
@@ -175,9 +175,9 @@ npm run dev
 
 ## 🔧 Configuration
 
-### DigitalOcean AI Setup (Option A)
+### DigitalOcean Gradient AI Setup (Option A)
 
-1. Create a DigitalOcean AI account
+1. Create a [DigitalOcean Gradient AI Platform](https://www.digitalocean.com/products/gradient/platform) account
 2. Get your agent endpoint and access key
 3. Set the environment variables in `backend/with-digital-ocean-agent/.env`:
 
@@ -294,10 +294,6 @@ Edit the `PRODUCT_CATALOG` in `backend/main.py` to add your own products with:
 - **Build errors**: Check Vite/React and TypeScript configuration
 - **Styling issues**: Ensure Tailwind CSS and shadcn/ui are properly configured
 - **Component errors**: Verify all shadcn/ui components are properly installed
-
-## 📝 License
-
-This project is part of the Memori demonstration suite. Please refer to the main Memori license for usage terms.
 
 ## 🤝 Contributing
 
