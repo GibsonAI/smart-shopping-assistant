@@ -35,6 +35,11 @@ from memori import Memori, create_memory_tool
 # Load environment variables
 load_dotenv()
 
+# Check for DigitalOcean credentials
+agent_endpoint = os.environ.get("agent_endpoint")
+agent_access_key = os.environ.get("agent_access_key")
+openai_api_key = os.environ.get("OPENAI_API_KEY")
+
 # Constants
 DATABASE_PATH = "sqlite:///smart_shopping_digitalocean.db"
 NAMESPACE = "smart_shopping_digitalocean"
@@ -172,7 +177,6 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000",
         "http://127.0.0.1:3000",
-        "http://localhost:3001",
         "https://preview--smart-shopping-assistant-fastapi.lovable.app",
     ],
     allow_credentials=True,
@@ -219,10 +223,6 @@ def initialize_services():
     """Initialize DigitalOcean client and memory system"""
     global digitalocean_client, memory_system, memory_tool
 
-    # Check for DigitalOcean credentials
-    agent_endpoint = os.environ["agent_endpoint"]
-    agent_access_key = os.environ["agent_access_key"]
-
     if not agent_endpoint or not agent_access_key:
         print("❌ Warning: DigitalOcean AI credentials not found in environment")
         print("Please set: agent_endpoint and agent_access_key")
@@ -246,6 +246,7 @@ def initialize_services():
         conscious_ingest=True,
         verbose=False,
         namespace=NAMESPACE,
+        openai_api_key=openai_api_key,
     )
     memory_system.enable()
 
@@ -405,7 +406,8 @@ async def chat(request: ChatRequest):
     """Chat with the shopping assistant"""
     if not digitalocean_client:
         raise HTTPException(
-            status_code=500, detail="DigitalOcean service not initialized"
+            status_code=500,
+            detail=f"DigitalOcean service not initialized {agent_endpoint}",
         )
 
     response = chat_with_digitalocean(request.message, request.customer_id)
