@@ -466,6 +466,11 @@ async def search_memory(query: str):
         raise HTTPException(status_code=500, detail=f"Memory search error: {str(e)}")
 
 
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
+
 if __name__ == "__main__":
     import uvicorn
 
