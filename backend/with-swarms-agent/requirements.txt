@@ -1,0 +1,7 @@
+memorisdk
+swarms
+python-dotenv
+fastapi
+uvicorn[standard]
+pydantic
+httpx

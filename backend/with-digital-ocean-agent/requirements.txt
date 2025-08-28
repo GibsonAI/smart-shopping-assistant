@@ -1,0 +1,7 @@
+memorisdk
+openai
+python-dotenv
+fastapi
+uvicorn[standard]
+pydantic
+httpx

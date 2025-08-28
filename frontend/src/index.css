@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Modern shopping theme with vibrant gradients */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 5% 6%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Primary: Electric blue gradient */
+    --primary: 213 94% 68%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 213 94% 78%;
+
+    /* Secondary: Purple accent */
+    --secondary: 263 70% 50%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 5% 6%;
+    --muted-foreground: 240 5% 64.9%;
+
+    /* Accent: Teal/cyan */
+    --accent: 172 100% 50%;
+    --accent-foreground: 240 10% 3.9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Glassmorphism borders */
+    --border: 240 6% 10%;
+    --input: 240 6% 10%;
+    --ring: 213 94% 68%;
+
+    --radius: 0.75rem;
+
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(213 94% 68%) 0%, hsl(263 70% 50%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(172 100% 50%) 0%, hsl(213 94% 68%) 100%);
+    --gradient-background: linear-gradient(135deg, hsl(240 10% 3.9%) 0%, hsl(240 8% 8%) 50%, hsl(240 10% 3.9%) 100%);
+    
+    /* Glass effect */
+    --glass-bg: hsl(240 10% 3.9% / 0.8);
+    --glass-border: hsl(240 6% 20% / 0.5);
+    
+    /* Shadows with glow */
+    --shadow-glow: 0 0 50px hsl(213 94% 68% / 0.3);
+    --shadow-card: 0 8px 32px hsl(240 10% 3.9% / 0.4);
+    
+    /* Animation timings */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Light mode with clean whites and subtle colors */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 213 94% 68%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 172 100% 50%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 213 94% 68%;
+    
+    /* Light mode gradients */
+    --gradient-background: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(240 20% 99%) 50%, hsl(0 0% 100%) 100%);
+    --glass-bg: hsl(0 0% 100% / 0.8);
+    --glass-border: hsl(240 5.9% 90% / 0.5);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground;
+    background: var(--gradient-background);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+  }
+  
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .hover-scale {
+    @apply transition-smooth hover:scale-105;
+  }
+  
+  .hover-glow {
+    @apply transition-smooth hover:shadow-glow;
+  }
+}
