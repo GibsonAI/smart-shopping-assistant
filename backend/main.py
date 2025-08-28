@@ -220,8 +220,8 @@ def initialize_services():
     global digitalocean_client, memory_system, memory_tool
 
     # Check for DigitalOcean credentials
-    agent_endpoint = os.getenv("agent_endpoint")
-    agent_access_key = os.getenv("agent_access_key")
+    agent_endpoint = os.environ["agent_endpoint"]
+    agent_access_key = os.environ["agent_access_key"]
 
     if not agent_endpoint or not agent_access_key:
         print("❌ Warning: DigitalOcean AI credentials not found in environment")
